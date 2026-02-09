@@ -59,6 +59,23 @@ body {
   max-width: 90ch;      /* oder max-width: none; wenn du volle Breite willst */
 }
 
+.sim {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* oben bündig */
+  gap: 24px;
+}
+
+.sim-text {
+  flex: 1;              /* Text bekommt den Platz */
+  max-width: 90ch;      /* oder max-width: none; wenn du volle Breite willst */
+}
+
+.daten {
+  flex: 1;
+  max-width: 90ch;
+}
+
 
 .Uebermich {
   font-size: 28px;
@@ -70,10 +87,6 @@ body {
   font-size: 28px;
   color: aquamarine;
   margin: 0;
-  text-align: center;
-  margin-left: 700px;
-  margin-right: 700px;
-  margin-top: 100px;
 }
 
 .container-simvideo {
@@ -289,7 +302,6 @@ h1 {
   .gallery-grid{ grid-template-columns: 1fr; }
 }
 
-
 /* =========================
    RESPONSIVE
    ========================= */
@@ -316,8 +328,6 @@ h1 {
   }
 }
 
-
-
 /* Responsive: auf kleinere Screens -> untereinander */
 @media (max-width: 900px){
   .project-card{
@@ -328,7 +338,6 @@ h1 {
     height: 200px;
   }
 }
-
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -345,4 +354,137 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
   }
+  .abschlussbild {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+  .productbild {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
 }
+
+/* =========================================
+   GLOBAL MOBILE FIX (alle Seiten wie Index)
+   ========================================= */
+@media (max-width: 900px) {
+
+  /* Verhindert horizontalen Scroll durch Oversize-Elemente */
+  html, body { overflow-x: hidden; }
+
+  /* Container einheitlich (wie dein Index) */
+  .container-me,
+  .container-projekte{
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  /* Der 300px Abstand ist auf Mobile zu aggressiv */
+  .container-projekte{
+    margin-top: 80px;
+  }
+
+  /* ALLE Reihen-Layouts untereinander (Index-Style) */
+  .intro,
+  .sim{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* .daten darf auf Mobile NIE feste Desktop-Margins haben */
+  .daten{
+    margin: 0;              /* überschreibt 740/700px */
+    padding: 0;
+    max-width: 90ch;
+    font-size: 20px;
+  }
+
+  /* Bilder überall responsive (keine festen Höhen) */
+  .me,
+  .abschlussbild,
+  .productbild,
+  .programbild{
+    width: 100%;
+    max-width: 420px;       /* wirkt auf Mobile sauber, wie Profilbild */
+    height: auto;
+    margin-right: 0;
+  }
+
+  /* Card/Grid: sauber stapeln */
+  .project-card{
+    grid-template-columns: 1fr;
+  }
+  .project-card__media{
+    height: 200px;
+  }
+
+  /* Gallery: 1 Spalte auf Handy */
+  .gallery-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* Wichtig: In deiner Gallery setzt du teils height im Media Query -> raus damit */
+  .bild img{
+    height: auto !important;
+  }
+
+  /* Hover-Zoom auf Touch aus (sonst Layout springt/Overflow) */
+  .programbild:hover,
+  .bild:hover{
+    transform: none;
+  }
+}
+
+/* =========================================================
+   VIDEO + BILD: Desktop nebeneinander, Mobile untereinander
+   ========================================================= */
+
+/* Video: immer innerhalb des Layouts bleiben */
+.container-simvideo video{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bild im gleichen Container ebenfalls sicher skalieren */
+.container-simvideo img,
+.container-simvideo .programbild{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: Video oben, Bild unten */
+@media (max-width: 900px){
+  .container-simvideo{
+    justify-content: center;
+    flex-direction: column; /* <-- untereinander */
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* erst Video */
+  .container-simvideo video{
+    order: 1;
+    max-height: 55vh;     /* <= macht es "nicht zu groß" */
+    object-fit: contain;  /* nichts wird abgeschnitten */
+    width: 100%;
+    max-width: 720px;     /* optional: Video nicht endlos breit */
+  }
+
+  /* dann Bild */
+  .container-simvideo img,
+  .container-simvideo .programbild{
+    order: 2;
+    width: 100%;
+    max-width: 420px;     /* optional: wie deine Bild-Blocks */
+    height: auto;
+  }
+}
+
+
