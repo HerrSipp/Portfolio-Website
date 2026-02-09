@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Michael - Portfolio</title>
+        <meta name="description" content="Portfolio von Michael" />
+
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+<body>
+
+<h1><strong><u>Fischer Produktkatalog (Abschlussprojekt)</u></strong></h1>
+
+<div class="Abschlussbild">
+    <img class="abschlussbild" src="../css/images/abschluss.png" alt="productbild">
+</div>
+
+<div class="container-sim">
+    <div class="sim">
+        <div class="sim-text">
+
+            <p class="Telemetrytext">
+                Der <strong>Fischer Produktkatalog</strong> ist mein Abschlussprojekt und eine <strong>WebApp auf Basis von ASP.NET MVC</strong>,
+                die einen Produktkatalog strukturiert darstellt und verwaltet. Ziel war eine praxisnahe Anwendung, 
+                die zwei Perspektiven abdeckt:
+                <br>
+                Kunden sollen Produkte schnell finden, vergleichen und merken können - Administratoren sollen Inhalte 
+                und Nutzer zentral pflegen, ohne an der Datenstruktur "vorbei" zu arbeiten.
+                <br>
+                <br>
+                Dabei lag mein Fokus auf einer klaren Benutzerführung (Kategorien als Einstieg, Suche/Filter als Schnellzugriff), 
+                einer sauberen Trennung der Verantwortlichkeiten im MVC-Pattern und einer Datenhaltung in MySQL, die für typische
+                Katalog-Anforderungen ausgelegt ist. 
+                <br>
+                <br>
+                <strong><u>Tech-Stack</u></strong>
+                <br>
+                <br>
+                <li class="daten">C# / .NET (ASP.NET MVC)</li>
+                <li class="daten">MySQL</li>
+                <li class="daten">HTML / CSS</li>
+            </p>
+            <p class="Telemetrytext">
+                <strong><u>Funktionsumfang der Kundenseite</u></strong>
+                <br>
+                <br>
+                <strong>Kategorien als Einstieg:</strong>
+                <br>
+                Auf der Startseite werden die Produktbereiche über Kategorie-Cards dargestellt. Dadurch sieht der Nutzer 
+                sofort die Struktur des Katalogs und kann ohne Umwege in einen Bereich einsteigen.
+                <br>
+                <br>
+                <strong>Suche & Filter:</strong>
+                <br>
+                Zusätzlich gibt es eine Suche und eine Filterung über kategorien, um Produkte gezielt zu finden.
+                Das ist besonders hilfreich, wenn der Katalog wächst und man nicht mehr "durchklicken" möchte.
+                <br>
+                <br>
+                <strong>Merkliste (Session-basiert):</strong>
+                <br>
+                Ein zentrales Feature ist die Merkliste, in die Nutzer Produkte während der Session speichern können.
+                Die Merkliste ist als seitliches Element sichtbar, wodurch man schnell zwischen Katalog und vorgemerkten 
+                Produkten wechseln kann - ohne den aktuellen Kontext zu verlieren. 
+                <br>
+                <br>
+                <strong>Profilverwaltung:</strong>
+                <br>
+                Angemeldete Nutzer können ihr Profil anpassen (z.B. Kontaktdaten/Firmendaten). Das ist in der Praxis 
+                wichtig, wenn Profile gepflegt werden sollen, ohne dass ein Admin eingreifen muss.
+            </p>
+            <p class="Telemetrytext">
+                <strong><u>Funktionsumfang des Admin</u></strong>
+                <br>
+                <br>
+                <strong>Login & Rollenlogik:</strong>
+                <br>
+                Die Anwendung enthält ein Login-System und einen Adminbereich, der separate Verwaltungsfunktionen 
+                bereitstellt. Nach dem Login führt ein Admin-Dashboard zu den zentralen Verwaltungsbereichen.
+                <br>
+                <br>
+                <strong>Benutzerverwaltung:</strong>
+                <br>
+                Admins können Benutzer übersichtlich verwalten (inkl. Bearbeiten/Löschen). Dazu gehören typische
+                Verwaltungsdetails wie E-Mail, Firma, Adresse, Telefon sowie die Admin-Kennzeichnung. 
+                <br>
+                <br>
+                <strong>Produktpflege:</strong>
+                <br>
+                Im Adminbereich können Produkte angelegt und bearbeitet werden. Dabei werden relevante Produktinformationen gepflegt 
+                (z.B. Kategorie, Messbereich, Schnittstellen, Zulassungen, Ausgangssignal, ATEX-Ausführung). 
+                Außerdem gibt es die Möglichkeit, produktbezogene Dateien zu verwalten:
+                <li class="daten">Produktbild (optional)</li>
+                <li class="daten">Datenblatt (PDF) (optional)</li>
+                <p class="Telemetrytext">
+                <strong>Kategorieübersicht:</strong>
+                <br>
+                Kategorien werden zusätzlich in einer Tabellenansicht dargestellt - inklusive Vorschaubildern, kurzen 
+                Details und einem Download-Button für Datenblätter. So ist die Pflege effizient und gleichzeitig nutzerfreundlich 
+                vorbereitet.
+                <br>
+                <br>
+                </p>
+            </p>
+            <p class="Telemetrytext">
+                <strong><u>Was ich mit dem Projekt zeige</u></strong>
+                <br>
+                <li class="daten">Umsetzung einer vollständigen MVC WebApp mit sauberen Seitenflüssen 
+                    (Katalog - Details/Listen - Merkliste)
+                </li>
+                <li class="daten">Authentifizierung und Adminbereich mit typischen Verwaltungsfunktionen</li>
+                <li class="daten">Strukturierte Datenhaltung in MySQL und typische CRUD-Prozesse (User, Kategorien, Produkte)</li>
+                <li class="daten">Praxisnahe Features wie Datei-Downloads (Datenblätter) und eine Merkliste als UX-Mehrwert</li>
+                <li class="daten">Fokus auf saubere Struktur und Nachvollziehbarkeit, damit das Projekt erweiterbar bleibt</li>
+                <br>
+                <br>
+            </p>
+            <p class="Telemetrytext">
+                <strong><u>Learnings & Herausforderungen</u></strong>
+                <br>
+                Bei diesem Projekt waren für mich besonders wichtig:
+                <li class="daten">die Trennung von Verantwortlichkeiten in MVC (Logik vs. Darstellung)</li>
+                <li class="daten">eine Datenstruktur, die Katalog-Funktionen wie Kategorien, Suche/Filter und Produktattribute
+                    sauber abbildet
+                </li>
+                <li class="daten">die Umsetzung eines rollenbasierten Adminbereichs</li>
+                <li class="daten">das Arbeiten mit Uploads/Dateiverwaltung (Produktbild/Datenblatt) und der sauberen Einbindung 
+                    als Datei-Downloads
+                </li>
+                <br>
+                <br>
+            </p>
+        </div>
+    </div>
+</div>
+
+<p class="Telemetrytext">
+    <strong><u>Bilder des Projekts</u></strong>
+</p>
+    <div class="gallery-grid">
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/admindashboard.jpg" alt="Admin Dashboard - Kacheln für Produkt- und benutzerverwaltung">
+            
+            <figcaption>Admin Dashboard</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/admin_benutzerverwaltung.jpg" alt="Admin Benutzerverwaltung">
+            
+            <figcaption>Admin Benutzerverwaltung</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/benutzer_löschen.jpg" alt="Benutzer löschen">
+            
+            <figcaption>Benutzer löschen</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/kategorieseite.png" alt="Kategorie Detailseite">
+            
+            <figcaption>Kategorie Detailseite</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/loginmaske.jpg" alt="Loginmaske">
+            
+            <figcaption>Loginmaske</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/merkliste.jpg" alt="Merkliste">
+            
+            <figcaption>Merkliste</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/passwortfalsch.jpg" alt="Passwort Hinweis">
+            
+            <figcaption>Passwort falsch Benachrichtigung</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/produkt_bearbeiten.jpg" alt="Produkt bearbeiten">
+            
+            <figcaption>Produkt bearbeiten</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/produkt_hinzufügen.jpg" alt="Produkt hinzufügen">
+            
+            <figcaption>Produkt hinzufügen</figcaption>
+        </figure>
+    
+
+    
+        <figure class="bild">
+            
+                <img src="../css/images/abschluss/profilseite.jpg" alt="Profilseite">
+            
+            <figcaption>Profilseite</figcaption>
+        </figure>
+    </div>
+
+
+</body>
+
+
+
+<footer>Erstellt von: Michael Siepert</footer>
+</html>
